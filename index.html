@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Triase Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Form Triase Digital</h1>
+        <form id="triage-form">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="jenisKelamin">Jenis Kelamin:</label>
+            <select id="jenisKelamin" name="jenisKelamin" required>
+                <option value="">-- Pilih Jenis Kelamin --</option>
+                <option value="Laki-laki">Laki-laki</option>
+                <option value="Perempuan">Perempuan</option>
+            </select>
+
+            <label for="age">Umur:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="tempat">Tempat Kejadian:</label>
+            <input type="text" id="tempat" name="tempat" required>
+
+            <label for="time">Waktu Kejadian:</label>
+            <input type="datetime-local" id="time" name="time" required>
+
+            <label for="temperature">Suhu Tubuh (°C):</label>
+            <input type="number" id="temperature" name="temperature" step="0.1" required>
+
+            <label for="rr">RR:</label>
+            <input type="number" id="rr" name="rr" required>
+
+            <label for="pulse">Nadi (bpm):</label>
+            <input type="number" id="pulse" name="pulse" required>
+
+            <label for="bp">Tekanan Darah (mmHg):</label>
+            <input type="text" id="bp" name="bp" placeholder="contoh: 120/80" required>
+
+            <label for="spo2">SPO2 (%):</label>
+            <input type="number" id="spo2" name="spo2" required>
+
+            <label for="gcs">GCS:</label>
+            <input type="number" id="gcs" name="gcs" required>
+
+            <label for="jenisKecelakaan">Jenis Kecelakaan:</label>
+                 <select id="jenisKecelakaan" name="jenisKecelakaan">
+                 <option value="">-- Pilih Jenis Kecelakaan --</option>
+                 <option value="Kecelakaan Lalu Lintas">Kecelakaan Lalu Lintas</option>
+                 <option value="Jatuh">Jatuh</option>
+                 <option value="Lainnya">Lainnya</option>
+            </select>
+           
+            <label for="bisaBernapas">Bisa Bernapas:</label>
+            <select id="bisaBernapas" name="bisaBernapas">
+                <option value="Yes">Ya</option>
+                <option value="No">Tidak</option>
+            </select>
+
+            <label for="sumbatanJalanNapas">Sumbatan Jalan Napas:</label>
+            <select id="sumbatanJalanNapas" name="sumbatanJalanNapas">
+                <option value="No">Tidak</option>
+                <option value="Yes">Ya</option>
+            </select>
+
+            <label for="gangguanSirkulasi">Gangguan Sirkulasi:</label>
+            <select id="gangguanSirkulasi" name="gangguanSirkulasi">
+                <option value="Tidak">Tidak</option>
+                <option value="Ya">Ya</option>
+            </select>
+
+            <label for="perdarahan">Perdarahan:</label>
+            <select id="perdarahan" name="perdarahan">
+                <option value="Tidak">Tidak</option>
+                <option value="Ya">Ya</option>
+            </select>
+
+            <label for="luka">Luka:</label>
+            <select id="luka" name="luka">
+                <option value="Tidak">Tidak</option>
+                <option value="Ya">Ya</option>
+            </select>
+
+            <label for="bisaBerjalan">Bisa Berjalan:</label>
+            <select id="bisaBerjalan" name="bisaBerjalan">
+                <option value="Yes">Ya</option>
+                <option value="No">Tidak</option>
+            </select>
+
+            <label for="crtUnder3">CRT < 3 detik:</label>
+            <select id="crtUnder3" name="crtUnder3">
+                <option value="Yes">Ya</option>
+                <option value="No">Tidak</option>
+            </select>
+
+            <label for="hospital">Pilih Rumah Sakit:</label>
+            <select id="hospital" name="hospital" required>                
+                <option value="">-- Pilih Rumah Sakit --</option>
+                <option value="RS A">RS A</option>
+                <option value="RS B">RS B</option>
+                <option value="RS C">RS C</option>               
+            </select>
+
+            <label for="transport">Jenis Akomodasi:</label>
+            <select id="transport" name="transport" required>
+                <option value="">-- Pilih Jenis Akomodasi --</option>
+                <option value="Ambulans">Ambulans</option>
+                <option value="Mobil Pribadi">Mobil Pribadi</option>
+                <option value="Sepeda Motor">Sepeda Motor</option>
+                <option value="Jalan Kaki">Jalan Kaki</option>
+                <!-- Tambahkan jenis akomodasi lain jika perlu -->
+            </select>
+
+            <button type="submit">Kirim</button>
+        </form>
+        <div id="result" style="display:none;">
+            <h2>Hasil Analisis</h2>
+            <div id="analysis"></div>
+            <button id="download-pdf" style="display:none;">Download PDF</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
